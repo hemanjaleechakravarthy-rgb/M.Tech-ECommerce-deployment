@@ -32,9 +32,10 @@ function ProductList({
     ];
 
     const filteredProducts = products.filter((product) =>
-        product.productName.toLowerCase().includes(search.toLowerCase()) &&
-        (category === "All" || product.category === category)
-    );
+    (product.productName ?? "").toLowerCase().includes(search.toLowerCase()) &&
+    (category === "All" || product.category === category)
+);
+
 
     if (loading) return <p>Loading products...</p>;
     if (error) return <p className="error-message">{error}</p>;
