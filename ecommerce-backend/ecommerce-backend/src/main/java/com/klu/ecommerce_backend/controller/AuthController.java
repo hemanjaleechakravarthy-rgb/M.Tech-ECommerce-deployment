@@ -18,7 +18,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://smartcart-frontend-xore.onrender.com"
+})
 public class AuthController {
 
     private final UserService userService;
